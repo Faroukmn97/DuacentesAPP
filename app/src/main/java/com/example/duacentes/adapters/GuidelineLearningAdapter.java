@@ -20,7 +20,6 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
 import com.example.duacentes.models.GuidelineModel;
-import com.example.duacentes.models.PrincipleModel;
 
 import java.util.List;
 
@@ -101,7 +100,9 @@ public class GuidelineLearningAdapter extends RecyclerView.Adapter<GuidelineLear
     public class GuidelineViewHolder extends RecyclerView.ViewHolder{
         ImageView ImageGuideline;
         LinearLayout linearyoutimageguideline;
-        TextView idguideline, name, textvbuttonguideline, idprinciple, principle, description,image,creationdate,updatedate,state;
+        TextView idguideline;
+        TextView name;
+        TextView textvbuttonguideline;
 
 
         GuidelineViewHolder (View itemView){

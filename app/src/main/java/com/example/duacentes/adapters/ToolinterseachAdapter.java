@@ -20,9 +20,7 @@ import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
 import com.example.duacentes.models.ToolModel;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ToolinterseachAdapter extends RecyclerView.Adapter<ToolinterseachAdapter.ToolinterseachViewHolder> implements  View.OnClickListener{
     private List<ToolModel> mData;
@@ -52,10 +50,6 @@ public class ToolinterseachAdapter extends RecyclerView.Adapter<ToolinterseachAd
     @Override
     public void onBindViewHolder(@NonNull ToolinterseachAdapter.ToolinterseachViewHolder holder, int position) {
         holder.name.setText(mData.get(position).getName());
-    //    Glide.with(context).load(mData.get(position).getImage()).into(holder.ISToolImageView);
-     //   holder.description.setText(mData.get(position).getDescription());
-     //   holder.urltool.setText(mData.get(position).getUrltool());
-     //   holder.textvbuttonISresource.setBackgroundResource(backgroundsbuttons[mData.get(position).getIdprinciple() - 1]);
 
         Glide.with(context).load(mData.get(position).getImage())
                 .placeholder(R.drawable.progress_animation)
@@ -93,15 +87,14 @@ public class ToolinterseachAdapter extends RecyclerView.Adapter<ToolinterseachAd
 
     public class ToolinterseachViewHolder extends RecyclerView.ViewHolder{
         ImageView ISToolImageView;
-        TextView idtool, name, image, textvbuttonISresource, urltool, diccionario, description, idprinciple, principle,idguideline, guideline, idresource, resource, creationdate,updatedate,state;
+        TextView name;
+        TextView textvbuttonISresource;
 
 
         ToolinterseachViewHolder (View itemView){
             super(itemView);
             ISToolImageView = itemView.findViewById(R.id.ISToolImageView);
             name = itemView.findViewById(R.id.nameISresource);
-          //  description = itemView.findViewById(R.id.descripISresource);
-           // urltool = itemView.findViewById(R.id.linkISresource);
             textvbuttonISresource = itemView.findViewById(R.id.textvbuttonISresource);
         }
     }

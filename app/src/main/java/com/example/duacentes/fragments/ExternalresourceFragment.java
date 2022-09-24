@@ -59,7 +59,7 @@ public class ExternalresourceFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
+    private String user_token;
 
     /**
      * Lista modelo de Recursos Externos
@@ -84,11 +84,6 @@ public class ExternalresourceFragment extends Fragment {
      * Adaptador de recursos externos
      */
     private ExternalresourceAdapter externalresourceAdapter;
-
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
 
     private ProgressDialog proDialogExternalResource;
 
@@ -216,14 +211,8 @@ public class ExternalresourceFragment extends Fragment {
      */
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
-        email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
+        String iduser = preferences.getString("iduser", null);
+        String email = preferences.getString("email", null);
         user_token = preferences.getString("user_token", null);
     }
 
@@ -251,21 +240,16 @@ public class ExternalresourceFragment extends Fragment {
         startActivity(i);
     }
 
-    private boolean validatesesion() {
-        sessionuser();
-        if (iduser != null && email != null && user_token != null || user_token != "") {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
         if(context instanceof Activity){
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
     @Override

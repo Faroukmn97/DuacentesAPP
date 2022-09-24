@@ -61,7 +61,7 @@ public class LguidelineFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
+    private String iduser,email,user_token;
 
     /**
      * Lista modelo de principios
@@ -89,18 +89,7 @@ public class LguidelineFragment extends Fragment {
      */
     private Activity activitys;
 
-    /**
-     * Textview Nombre del princicio
-     */
-    private TextView namepguideline;
 
-    /**
-     * Modelo principio
-     */
-    private PrincipleModel principleModel;
-
-
-    private ImageView Imageprincipleguide;
     /**
      * Contiene las imagenes de los cerebros de los principios
      */
@@ -135,7 +124,10 @@ public class LguidelineFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         Bundle object = getArguments();
-        principleModel = null;
+        /**
+         * Modelo principio
+         */
+        PrincipleModel principleModel = null;
         if (object != null) {
             principleModel = (PrincipleModel) object.getSerializable("object");
 
@@ -259,13 +251,7 @@ public class LguidelineFragment extends Fragment {
 
     public void sessionuser() {
         iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
         email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
         user_token = preferences.getString("user_token", null);
     }
 
@@ -279,28 +265,6 @@ public class LguidelineFragment extends Fragment {
 
     }
 
-
-    /**
-     * Login
-     */
-
-    private void gologin() {
-        Intent i = new Intent(getActivity(), MainActivity.class);
-        // bandera para que no se creen nuevas actividades innecesarias
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(i);
-    }
-
-    private boolean validatesesion() {
-        sessionuser();
-        if (iduser != null && email != null && user_token != null || user_token != "") {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     @Override
     public void onAttach(Context context) {

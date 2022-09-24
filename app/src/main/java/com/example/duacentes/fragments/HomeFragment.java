@@ -20,7 +20,6 @@ import android.view.ViewGroup;
 
 import com.example.duacentes.R;
 import com.example.duacentes.adapters.MyViewPagerAdapter;
-import com.example.duacentes.config.ProcessUpdateProfile;
 import com.google.android.material.tabs.TabLayout;
 
 
@@ -31,8 +30,15 @@ public class HomeFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
-    private Boolean firstfragment;
+
+    private String names;
+    private String last_name;
+    private String email;
+    private String image;
+    private String birthdate;
+    private String rol;
+    private String state;
+    private String user_token;
 
     TabLayout tabLayout;
     ViewPager2  viewPager2;
@@ -124,19 +130,13 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    private void firstfragment(){
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("firstfragment",false);
-        editor.commit();
-    }
-
     /**
      * Sessión del usuario
      */
 
 
     public void sessionuser(){
-        iduser = preferences.getString("iduser",null);
+        String iduser = preferences.getString("iduser", null);
         names= preferences.getString("names",null);
         last_name= preferences.getString("last_name",null);
         email= preferences.getString("email",null);
@@ -145,7 +145,6 @@ public class HomeFragment extends Fragment {
         rol= preferences.getString("rol",null);
         state= preferences.getString("state",null);
         user_token= preferences.getString("user_token",null);
-        firstfragment = preferences.getBoolean("firstfragment",false);
         proDialoghome.dismiss();
     }
 

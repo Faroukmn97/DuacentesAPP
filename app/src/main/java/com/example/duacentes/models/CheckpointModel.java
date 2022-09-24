@@ -15,8 +15,8 @@ public class CheckpointModel implements Serializable {
     private String updatedate;
     private boolean state;
 
-    public CheckpointModel(int idcheckpoint, int idprinciple, String principle, int idguideline, String guideline, String name, String description, String image, String creationdate, String updatedate, boolean state) {
-        this.idcheckpoint = idcheckpoint;
+    public CheckpointModel(int xidcheckpoint, int idprinciple, String principle, int idguideline, String guideline, String name, String description, String image, String creationdate, String updatedate, boolean state) {
+        this.idcheckpoint = xidcheckpoint;
         this.idprinciple = idprinciple;
         this.principle = principle;
         this.idguideline = idguideline;

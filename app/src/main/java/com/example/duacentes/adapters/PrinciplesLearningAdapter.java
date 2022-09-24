@@ -20,7 +20,6 @@ import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.models.PrincipleModel;
 import com.example.duacentes.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PrinciplesLearningAdapter extends RecyclerView.Adapter<PrinciplesLearningAdapter.PrincipleViewHolder> implements  View.OnClickListener{
@@ -92,7 +91,9 @@ public class PrinciplesLearningAdapter extends RecyclerView.Adapter<PrinciplesLe
 
     public class PrincipleViewHolder extends RecyclerView.ViewHolder{
         ImageView ImagePrinciple;
-        TextView idprinciple, tipeprinciple,textvbuttonprinciple, name, description,image,creationdate,updatedate,state;
+        TextView tipeprinciple;
+        TextView textvbuttonprinciple;
+        TextView name;
 
 
         PrincipleViewHolder (View itemView){

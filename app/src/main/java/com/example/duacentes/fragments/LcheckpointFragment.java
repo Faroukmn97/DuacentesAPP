@@ -363,7 +363,7 @@ public class LcheckpointFragment extends Fragment {
 
     private boolean validatesesion() {
         sessionuser();
-        if (iduser != null && email != null && user_token != null || user_token != "") {
+        if (iduser != null && email != null && user_token != null || user_token equals("")) {
             return true;
         } else {
             return false;

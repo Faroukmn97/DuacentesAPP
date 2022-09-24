@@ -97,14 +97,15 @@ public class PrinciplesintersearchAdapter extends RecyclerView.Adapter<Principle
 
     public class PrinciplesintersearchViewHolder extends RecyclerView.ViewHolder{
         ImageView ImagePrinciple;
-        TextView idprinciple, tipeprinciple,textvbuttonISprinciple, name, description,image,creationdate,updatedate,state;
+        TextView tipeprinciple;
+        TextView textvbuttonISprinciple;
+        TextView name;
 
 
         PrinciplesintersearchViewHolder (View itemView){
             super(itemView);
             ImagePrinciple = itemView.findViewById(R.id.ImagePrincipleintersearch);
             tipeprinciple = itemView.findViewById(R.id.tipeprincipleintersearch);
-          //  tipeprinciple =  itemView.findViewById(R.id.tipeprinciple);
             name = itemView.findViewById(R.id.nameintersearchprinciple);
             textvbuttonISprinciple = itemView.findViewById(R.id.textvbuttonISprinciple);
         }

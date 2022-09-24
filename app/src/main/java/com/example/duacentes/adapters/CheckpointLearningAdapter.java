@@ -20,7 +20,6 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
 import com.example.duacentes.models.CheckpointModel;
-import com.example.duacentes.models.GuidelineModel;
 
 import java.util.List;
 
@@ -101,7 +100,9 @@ public class CheckpointLearningAdapter  extends RecyclerView.Adapter<CheckpointL
     public class CheckpointViewHolder extends RecyclerView.ViewHolder{
         ImageView ImageCheckpoint;
         LinearLayout linearLayoutcheck;
-        TextView idcheckpoint, idprinciple, textvbuttoncheckpoint, principle, idguideline, guideline, name, description,image,creationdate,updatedate,state;
+        TextView idcheckpoint;
+        TextView textvbuttoncheckpoint;
+        TextView name;
 
 
         CheckpointViewHolder (View itemView){
@@ -111,7 +112,6 @@ public class CheckpointLearningAdapter  extends RecyclerView.Adapter<CheckpointL
             idcheckpoint = itemView.findViewById(R.id.idcheckpoint);
             name = itemView.findViewById(R.id.namecheckpoint);
             textvbuttoncheckpoint = itemView.findViewById(R.id.textvbuttoncheckpoint);
-          //  description = itemView.findViewById(R.id.descripcheckpoint);
         }
     }
 }

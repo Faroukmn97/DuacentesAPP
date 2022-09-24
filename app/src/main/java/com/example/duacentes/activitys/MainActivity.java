@@ -95,11 +95,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user = edittextuser.getText().toString();
                 String password = edittextpassword.getText().toString();
-                String loginjson = "{\n" +
-                        "   \"email\":\""+edittextuser.getText()+"\",\n" +
-                        "   \"password\":\""+edittextpassword.getText()+"\"\n" +
-                        "}";
-              //  goMenu();
               try {
                   proDialog.setTitle("Iniciando sesión");
                   proDialog.setMessage("Cargando espere un momento...");

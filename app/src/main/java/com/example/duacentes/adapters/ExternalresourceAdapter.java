@@ -19,7 +19,6 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
 import com.example.duacentes.models.ExternalresourceModel;
-import com.example.duacentes.models.PrincipleModel;
 
 import java.util.List;
 
@@ -80,7 +79,7 @@ public class ExternalresourceAdapter extends RecyclerView.Adapter<Externalresour
 
     public class ExternalresourceViewHolder extends RecyclerView.ViewHolder{
         ImageView ExternalresourceImageview;
-        TextView idexternalresource, nameresourceexternal, description,image,resource, creationdate,updatedate,state;
+        TextView nameresourceexternal;
 
 
         ExternalresourceViewHolder (View itemView){

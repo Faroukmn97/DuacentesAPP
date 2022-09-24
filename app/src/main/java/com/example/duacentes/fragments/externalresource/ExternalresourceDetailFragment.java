@@ -334,26 +334,5 @@ public class ExternalresourceDetailFragment extends Fragment {
 
     }
 
-    /**
-     * Login
-     */
-
-    private void gologin() {
-        Intent i = new Intent(getActivity(), MainActivity.class);
-        // bandera para que no se creen nuevas actividades innecesarias
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(i);
-    }
-
-    private boolean validatesesion() {
-        sessionuser();
-        if (iduser != null && email != null && user_token != null || user_token != "") {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 }

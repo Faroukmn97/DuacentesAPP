@@ -38,9 +38,7 @@ public class PrincipleAllFragment extends Fragment {
 
     private ProgressDialog proDialogprincipleall;
 
-    private TextView titleprincipleall;
     private TextView textprincipleall1;
-    private ImageView imgprincipleall;
     private MaterialButton textvbuttonprincipleall;
 
     private String principleall1 =
@@ -97,9 +95,9 @@ public class PrincipleAllFragment extends Fragment {
 
     private void init(View view) {
 
-        titleprincipleall = (TextView) view.findViewById(R.id.titleprincipleall);
+        TextView titleprincipleall = (TextView) view.findViewById(R.id.titleprincipleall);
         textprincipleall1 = (TextView) view.findViewById(R.id.textprincipleall1);
-        imgprincipleall = (ImageView) view.findViewById(R.id.imgprincipleall);
+        ImageView imgprincipleall = (ImageView) view.findViewById(R.id.imgprincipleall);
         textvbuttonprincipleall = (MaterialButton) view.findViewById(R.id.textvbuttonprincipleall);
 
     }

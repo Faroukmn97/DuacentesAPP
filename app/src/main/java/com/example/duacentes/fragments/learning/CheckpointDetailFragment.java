@@ -39,16 +39,6 @@ public class CheckpointDetailFragment extends Fragment {
     private iCommunicates_Fragments interfacecommunicates_Fragments;
 
     /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
-
-    /**
-     * Modelo puntos de verificación
-     */
-    private CheckpointModel checkpointModel;
-
-    /**
      * Barra de progreso de carga
      */
     private ProgressDialog proDialogLearning;
@@ -131,7 +121,10 @@ public class CheckpointDetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         Bundle object= getArguments();
-        checkpointModel = null;
+        /**
+         * Modelo puntos de verificación
+         */
+        CheckpointModel checkpointModel = null;
 
         if(object!=null){
             checkpointModel = (CheckpointModel) object.getSerializable("object");
@@ -212,8 +205,11 @@ public class CheckpointDetailFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
 

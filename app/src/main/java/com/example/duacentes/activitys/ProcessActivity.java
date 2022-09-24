@@ -65,16 +65,6 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
 
     private RequestQueue requestQueue;
 
-    /**
-     * ImageView Imagen del usuario
-     */
-    private ImageView foto;
-
-    /**
-     * TextView nombre del usuario
-     * TextView rol del usuario
-     */
-    private TextView nameprofile;
     private TextView emailprofile;
 
     /**
@@ -82,7 +72,6 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
      */
     private SharedPreferences preferences;
     private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
-    private Boolean firstfragment;
 
     /**
      * Sección Fragments
@@ -91,37 +80,14 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
     private FragmentTransaction fragmentTransaction;
 
     /**
-     * Aprendizaje
-     */
-    private PrincipleDetailFragment principleDetailFragment;
-    private LguidelineFragment lguidelineFragment;
-    private GuidelineDetailFragment guidelineDetailFragment;
-    private LcheckpointFragment lcheckpointFragment;
-    private CheckpointDetailFragment checkpointDetailFragment;
-    /**
-     * Recursos Externos
-     */
-
-    private ExternalresourceDetailFragment externalresourceDetailFragment;
-
-    /**
-     * Búsqueda de recursos
-     */
-
-    private SearchresourceDetailFragment searchresourceDetailFragment;
-
-    /**
      * Búsqueda por secciones
      */
     private ISguidelineFragment iSguidelineFragment;
-    private ISresourcesFragment iSresourcesFragment;
-    private ISresourceDetailFragment iSresourceDetailFragment;
 
     /**
      * ActionBarDrawerToggle
      */
 
-    private ActionBarDrawerToggle actionBarDrawerToggle;
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -176,8 +142,15 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
 
 
             View hView = navigationView.getHeaderView(0);
-            foto = (ImageView) hView.findViewById(R.id.imageProfile);
-            nameprofile = (TextView) hView.findViewById(R.id.nameprofile);
+            /**
+             * ImageView Imagen del usuario
+             */
+            ImageView foto = (ImageView) hView.findViewById(R.id.imageProfile);
+            /**
+             * TextView nombre del usuario
+             * TextView rol del usuario
+             */
+            TextView nameprofile = (TextView) hView.findViewById(R.id.nameprofile);
             emailprofile = (TextView) hView.findViewById(R.id.emailprofile);
             nameprofile.setText(names + " " + last_name);
             emailprofile.setText(email);
@@ -312,26 +285,9 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
         rol = preferences.getString("rol", null);
         state = preferences.getString("state", null);
         user_token = preferences.getString("user_token", null);
-        firstfragment = preferences.getBoolean("firstfragment", false);
+        Boolean firstfragment = preferences.getBoolean("firstfragment", false);
     }
 
-
-    /**
-     * Validación de la sessión del usuario
-     *
-     * @return true si existe sessión o false si no hay sessión
-     */
-
-    private boolean validatesesion() {
-
-        if (iduser != null && email != null && user_token != null && user_token != "") {
-
-            Log.d("token ", user_token);
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     /**
      * Login
@@ -361,7 +317,10 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
 
     @Override
     public void SendPrincipleforPrincipleDetailLModel(PrincipleModel principleModel) {
-        principleDetailFragment = new PrincipleDetailFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
+        /**
+         * Aprendizaje
+         */
+        PrincipleDetailFragment principleDetailFragment = new PrincipleDetailFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
         Bundle bundleSend = new Bundle();// object bundle para transportar la información
         bundleSend.putSerializable("object", principleModel);// enviar el objeto que está llegando con Serializable
         principleDetailFragment.setArguments(bundleSend);
@@ -381,7 +340,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
      */
     @Override
     public void SendDetailPrincipleforGuidelineModel(PrincipleModel principleModel) {
-        lguidelineFragment = new LguidelineFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
+        LguidelineFragment lguidelineFragment = new LguidelineFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
         Bundle bundleSend = new Bundle();// object bundle para transportar la información
         bundleSend.putSerializable("object", principleModel);// enviar el objeto que está llegando con Serializable
         lguidelineFragment.setArguments(bundleSend);
@@ -403,7 +362,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
 
     @Override
     public void SendGuidelineforGuidelineDetailModel(GuidelineModel guidelineModel, PrincipleModel principleModel) {
-        guidelineDetailFragment = new GuidelineDetailFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
+        GuidelineDetailFragment guidelineDetailFragment = new GuidelineDetailFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
         Bundle bundleSend = new Bundle();// object bundle para transportar la información
         bundleSend.putSerializable("object", guidelineModel);// enviar el objeto que está llegando con Serializable
         bundleSend.putSerializable("object2", principleModel);
@@ -424,7 +383,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
      */
     @Override
     public void SendDetailGuidelineforCheckpoints(GuidelineModel guidelineModel, PrincipleModel principleModel) {
-        lcheckpointFragment = new LcheckpointFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
+        LcheckpointFragment lcheckpointFragment = new LcheckpointFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
         Bundle bundleSend = new Bundle();// object bundle para transportar la información
         bundleSend.putSerializable("object", guidelineModel);// enviar el objeto que está llegando con Serializable
         bundleSend.putSerializable("object2", principleModel);
@@ -445,7 +404,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
      */
     @Override
     public void SendCheckpointforCheckpointDetail(CheckpointModel checkpointModel, PrincipleModel principleModel) {
-        checkpointDetailFragment = new CheckpointDetailFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
+        CheckpointDetailFragment checkpointDetailFragment = new CheckpointDetailFragment();// aquí se realiza toda la lógica necesaria para poder realizar el envio
         Bundle bundleSend = new Bundle();// object bundle para transportar la información
         bundleSend.putSerializable("object", checkpointModel);// enviar el objeto que está llegando con Serializable
         bundleSend.putSerializable("object2", principleModel);
@@ -489,7 +448,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
     @Override
     public void SendISGuidelineModel(GuidelineModel guidelineModel, PrincipleModel principleModel) {
 
-        iSresourcesFragment = new ISresourcesFragment();
+        ISresourcesFragment iSresourcesFragment = new ISresourcesFragment();
         Bundle bundleSend = new Bundle();
         bundleSend.putSerializable("object", guidelineModel);
         bundleSend.putSerializable("object2", principleModel);
@@ -507,7 +466,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
     @Override
     public void SendToolModel(ToolModel toolModel) {
 
-        iSresourceDetailFragment = new ISresourceDetailFragment();
+        ISresourceDetailFragment iSresourceDetailFragment = new ISresourceDetailFragment();
         Bundle bundleSend = new Bundle();
         bundleSend.putSerializable("object", toolModel);
         iSresourceDetailFragment.setArguments(bundleSend);
@@ -523,7 +482,10 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
     @Override
     public void SendToolModeltoSearchResourceDetail(ToolModel toolModel) {
 
-        searchresourceDetailFragment = new SearchresourceDetailFragment();
+        /**
+         * Búsqueda de recursos
+         */
+        SearchresourceDetailFragment searchresourceDetailFragment = new SearchresourceDetailFragment();
         Bundle bundleSend = new Bundle();
         bundleSend.putSerializable("object", toolModel);
         searchresourceDetailFragment.setArguments(bundleSend);
@@ -567,7 +529,10 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
     @Override
     public void SendExternalResourceModel(ExternalresourceModel externalresourceModel) {
 
-        externalresourceDetailFragment = new ExternalresourceDetailFragment();
+        /**
+         * Recursos Externos
+         */
+        ExternalresourceDetailFragment externalresourceDetailFragment = new ExternalresourceDetailFragment();
         Bundle bundleSend = new Bundle();
         bundleSend.putSerializable("object", externalresourceModel);
         externalresourceDetailFragment.setArguments(bundleSend);

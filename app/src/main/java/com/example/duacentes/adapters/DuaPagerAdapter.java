@@ -7,9 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.duacentes.fragments.dua.DuaDetailFragment;
 import com.example.duacentes.fragments.dua.PrincipleAllFragment;
-import com.example.duacentes.fragments.home.AcExpressionFragment;
-import com.example.duacentes.fragments.home.EngagementFragment;
-import com.example.duacentes.fragments.home.RepresentationFragment;
 
 public class DuaPagerAdapter extends FragmentStateAdapter {
 

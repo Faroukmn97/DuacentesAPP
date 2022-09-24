@@ -98,7 +98,9 @@ public class GuidelineintersearchAdapter extends RecyclerView.Adapter<Guidelinei
     public class GuidelineintersearchViewHolder extends RecyclerView.ViewHolder{
         ImageView ImageintersearchGuideline;
         LinearLayout linearyoutImageintersearchGuideline;
-        TextView idguideline, name, idprinciple,textvbuttonISguideline, principle, description,image,creationdate,updatedate,state;
+        TextView idguideline;
+        TextView name;
+        TextView textvbuttonISguideline;
 
 
         GuidelineintersearchViewHolder (View itemView){

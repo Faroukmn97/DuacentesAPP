@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -32,12 +31,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.duacentes.R;
-import com.example.duacentes.config.DatePickerFragment;
 import com.example.duacentes.config.HttpsTrustManager;
 import com.example.duacentes.config.general_data;
 import com.example.duacentes.config.utilities;
 import com.example.duacentes.interfaces.ApiInterface;
-import com.example.duacentes.interfaces.ApiInterface.*;
 import com.example.duacentes.models.SendImageModel;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -47,7 +44,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.security.cert.CertificateException;
 import java.util.HashMap;
 import java.util.Map;
@@ -66,7 +62,6 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -89,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
     /**
      * Botones para cargar imagen y enviar a guardar los datos al servidor y base de datos
      */
-    private Button btnSubirImagen, btnRegister;
+    private Button bondsmen, btnRegister;
 
     /**
      * Imagen de ususario
@@ -99,9 +94,9 @@ public class RegisterActivity extends AppCompatActivity {
     /**
      * Editexts
      */
-    private EditText edtNameUser, edtApellidoPaternoU, edtApellidoMaternou, edtbirthdateUser, edtEmailUser, edtPasswordUser;
+    private EditText edtNameUser, lastname, lastnamemother, edtbirthdateUser, edtEmailUser, edtPasswordUser;
 
-    private TextInputLayout txtInputNameUser, txtInputApellidoPaternoU, txtInputApellidoMaternoU, txtInputbirthdate, txtInputEmailUser, txtInputPasswordUser;
+    private TextInputLayout txtInputNameUser, txtInputAppliedPatternU, txtInputAppliedMaternalU, txtInputbirthdate, txtInputEmailUser, txtInputPasswordUser;
 
     private int dia, mes, anio;
 
@@ -128,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        btnSubirImagen.setOnClickListener(v -> {
+        bondsmen.setOnClickListener(v -> {
             this.cargarImagen();
         });
         btnRegister.setOnClickListener(v -> {
@@ -148,8 +143,8 @@ public class RegisterActivity extends AppCompatActivity {
     private boolean validar() {
         boolean retorno = true;
         nombres = edtNameUser.getText().toString();
-        apellidoPaterno = edtApellidoPaternoU.getText().toString();
-        apellidoMaterno = edtApellidoMaternou.getText().toString();
+        apellidoPaterno = lastname.getText().toString();
+        apellidoMaterno = lastnamemother.getText().toString();
         birthdate = edtbirthdateUser.getText().toString();
         correo = edtEmailUser.getText().toString();
         password = edtPasswordUser.getText().toString();
@@ -164,16 +159,16 @@ public class RegisterActivity extends AppCompatActivity {
             txtInputNameUser.setErrorEnabled(false);
         }
         if (apellidoPaterno.isEmpty()) {
-            txtInputApellidoPaternoU.setError("Ingresar apellido paterno");
+            txtInputAppliedPatternU.setError("Ingresar apellido paterno");
             retorno = false;
         } else {
-            txtInputApellidoPaternoU.setErrorEnabled(false);
+            txtInputAppliedPatternU.setErrorEnabled(false);
         }
         if (apellidoMaterno.isEmpty()) {
-            txtInputApellidoMaternoU.setError("Ingresar apellido materno");
+            txtInputAppliedMaternalU.setError("Ingresar apellido materno");
             retorno = false;
         } else {
-            txtInputApellidoMaternoU.setErrorEnabled(false);
+            txtInputAppliedMaternalU.setErrorEnabled(false);
         }
         if (birthdate.isEmpty()) {
             txtInputbirthdate.setError("Ingresar apellido paterno");
@@ -230,20 +225,20 @@ public class RegisterActivity extends AppCompatActivity {
      */
     private void init() {
         txtInputNameUser = (TextInputLayout) findViewById(R.id.txtInputNameUser);
-        txtInputApellidoPaternoU = (TextInputLayout) findViewById(R.id.txtInputApellidoPaternoU);
-        txtInputApellidoMaternoU = (TextInputLayout) findViewById(R.id.txtInputApellidoMaternoU);
+        txtInputAppliedPatternU = (TextInputLayout) findViewById(R.id.txtInputApellidoPaternoU);
+        txtInputAppliedMaternalU = (TextInputLayout) findViewById(R.id.txtInputApellidoMaternoU);
         txtInputbirthdate = (TextInputLayout) findViewById(R.id.txtInputbirthdate);
         txtInputEmailUser = (TextInputLayout) findViewById(R.id.txtInputEmailUser);
         txtInputPasswordUser = (TextInputLayout) findViewById(R.id.txtInputPasswordUser);
 
         edtNameUser = (EditText) findViewById(R.id.edtNameUser);
-        edtApellidoPaternoU = (EditText) findViewById(R.id.edtApellidoPaternoU);
-        edtApellidoMaternou = (EditText) findViewById(R.id.edtApellidoMaternou);
+        lastname = (EditText) findViewById(R.id.edtApellidoPaternoU);
+        lastnamemother = (EditText) findViewById(R.id.edtApellidoMaternou);
         edtbirthdateUser = (EditText) findViewById(R.id.edtbirthdateUser);
         edtEmailUser = (EditText) findViewById(R.id.edtEmailUser);
         edtPasswordUser = (EditText) findViewById(R.id.edtPasswordUser);
 
-        btnSubirImagen = (Button) findViewById(R.id.btnSubirImagen);
+        bondsmen = (Button) findViewById(R.id.btnSubirImagen);
         btnRegister = (Button) findViewById(R.id.btnRegister);
 
         imageUser = (CircleImageView) findViewById(R.id.imageUser);

@@ -2,7 +2,6 @@ package com.example.duacentes.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,15 +115,13 @@ public class SearchToolAdapter extends RecyclerView.Adapter<SearchToolAdapter.Se
 
     public class SearchToolViewHolder extends RecyclerView.ViewHolder {
         ImageView SearchToolImageView;
-        TextView idtool, name, image, urltool, diccionario, description, idprinciple, principle, idguideline, guideline, idresource, resource, creationdate, updatedate, state;
+        TextView name;
 
 
         SearchToolViewHolder(View itemView) {
             super(itemView);
             SearchToolImageView = itemView.findViewById(R.id.SearchToolImageView);
             name = itemView.findViewById(R.id.nameresourceshearch);
-           // description = itemView.findViewById(R.id.descripresourceshearch);
-           // urltool = itemView.findViewById(R.id.linkresourceshearch);
         }
     }
 }
