@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:andriod="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    andriod:id="@+id/cv"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="wrap_content"
+    andriod:animateLayoutChanges="true"
+    app:cardCornerRadius="32dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="wrap_content"
+        andriod:animateLayoutChanges="true"
+        andriod:orientation="vertical">
+        <RelativeLayout
+            andriod:layout_width="match_parent"
+            andriod:layout_height="wrap_content"
+            andriod:orientation="horizontal"
+            andriod:padding="10dp"
+            andriod:background="@drawable/cardresourceexternal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                andriod:id="@+id/ExternalresourceImageview"
+                andriod:layout_width="90dp"
+                andriod:layout_height="90dp"
+                andriod:layout_alignParentStart="true"
+                andriod:layout_alignParentLeft="true"
+                andriod:layout_gravity="center"
+                andriod:layout_marginBottom="5dp"
+                andriod:layout_marginTop="5dp"
+                andriod:paddingLeft="10dp"
+                andriod:scaleType="centerCrop"
+                app:civ_border_color="#FFF"
+                app:civ_border_width="2dp"
+                andriod:src="@drawable/star" />
+
+
+            <LinearLayout
+                andriod:id="@+id/linearLayout"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:layout_alignParentTop="true"
+                andriod:layout_marginLeft="4dp"
+                andriod:layout_marginTop="2dp"
+                andriod:layout_toRightOf="@+id/ExternalresourceImageview"
+                andriod:gravity="center"
+                andriod:orientation="vertical">
+
+                <TextView
+                    andriod:id="@+id/nameresourceexternal"
+                    andriod:layout_width="match_parent"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_marginBottom="2dp"
+                    andriod:text="Recurso externo"
+                    andriod:textAlignment="center"
+                    andriod:textColor="@android:color/black"
+                    andriod:textSize="30sp"
+                    andriod:gravity="center"
+                    andriod:textStyle="bold" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

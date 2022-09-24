@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:andriod="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    andriod:id="@+id/cv"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="wrap_content"
+    andriod:animateLayoutChanges="true"
+    app:cardCornerRadius="25dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="wrap_content"
+        andriod:animateLayoutChanges="true"
+        andriod:orientation="vertical">
+        <RelativeLayout
+            andriod:layout_width="match_parent"
+            andriod:layout_height="wrap_content"
+            andriod:orientation="horizontal"
+            andriod:padding="6dp">
+
+
+            <LinearLayout
+                andriod:id="@+id/linearLayoutprinciple"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:gravity="center_horizontal">
+
+                 <TextView
+                    andriod:id="@+id/tipeprinciple"
+                    andriod:layout_width="match_parent"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_marginBottom="10dp"
+                    andriod:gravity="center"
+                    andriod:text="id"
+                    andriod:textColor="@android:color/black"
+                    andriod:textSize="24sp"
+                    andriod:textStyle="bold"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                andriod:id="@+id/linearyoutimagecontainer"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="220dp"
+                andriod:layout_below="@+id/linearLayoutprinciple"
+                andriod:gravity="center">
+
+                <LinearLayout
+                    andriod:id="@+id/linearyoutimage"
+                    andriod:layout_width="240dp"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_marginStart="10dp"
+                    andriod:layout_marginTop="10dp"
+                    andriod:layout_marginEnd="10dp"
+                    andriod:layout_marginBottom="10dp"
+                    andriod:background="@drawable/cardlearning">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        andriod:id="@+id/ImagePrinciple"
+                        andriod:layout_width="match_parent"
+                        andriod:layout_height="wrap_content"
+                        andriod:layout_centerInParent="true"
+                        andriod:adjustViewBounds="true"
+                        andriod:scaleType="fitCenter"
+                        app:shapeAppearanceOverlay="@style/roundimageview"
+                        app:srcCompat="@drawable/escudouteq" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                andriod:id="@+id/linearLayout"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:layout_below="@+id/linearyoutimagecontainer"
+                andriod:orientation="vertical">
+
+                <TextView
+                    andriod:id="@+id/nameprinciple"
+                    andriod:layout_width="match_parent"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_marginBottom="20dp"
+                    andriod:gravity="center"
+                    andriod:text="Name"
+                    andriod:textColor="@android:color/black"
+                    andriod:textSize="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                andriod:id="@+id/linearLayoutbuttonprinciple"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:layout_below="@+id/linearLayout"
+                andriod:gravity="right"
+                andriod:orientation="vertical"
+                andriod:padding="4dp">
+
+                <TextView
+                    andriod:id="@+id/textvbuttonprinciple"
+                    andriod:layout_width="170dp"
+                    andriod:layout_height="match_parent"
+                    andriod:background="@drawable/buttonlearningrepresentation"
+                    andriod:drawableEnd="@drawable/ic_baseline_east"
+                    andriod:drawablePadding="1dp"
+                    andriod:padding="10dp"
+                    andriod:text="Más información"
+                    andriod:textColor="@color/white"
+                    andriod:textStyle="bold" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

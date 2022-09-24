@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/background_blue.xml" value="0.305" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/buttonlearning.xml" value="0.1735" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/buttonlearningacex.xml" value="0.236" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/buttonlearningengagement.xml" value="0.167" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/buttonlearningrepresentation.xml" value="0.167" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/cardlearningacex.xml" value="0.113" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/cardlearningengagement.xml" value="0.1075" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/cardlearningrepresentation.xml" value="0.1065" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_add_photo.xml" value="0.223" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_email.xml" value="0.2405" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2205" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_lock.xml" value="0.2405" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_person.xml" value="0.223" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_phone.xml" value="0.223" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_salir.xml" value="0.223" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_save.xml" value="0.2405" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/ic_volver_atras.xml" value="0.275" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable-v24/side_nav_bar.xml" value="0.305" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/bookmark.xml" value="0.1385" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/button_rounded.xml" value="0.195" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/button_rounded_border.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/buttonstyle_principlelearning.xml" value="0.167" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/cardlearning.xml" value="0.2345" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/cardresourceexternal.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ccompromiso_background.xml" value="0.2205" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/cere-representacion_background.xml" value="0.2205" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/crepresentacion_background.xml" value="0.2205" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/fondotheme.xml" value="0.137" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/home_24.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_date.xml" value="0.131" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1385" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.131" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_download.xml" value="0.131" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2205" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/progress_animation.xml" value="0.1875" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/search.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/share.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/side_principle_bar.xml" value="0.166" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/side_principle_three_bar.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/side_principle_two_bar.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/slide_in.xml" value="0.137" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/slide_out.xml" value="0.137" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/style.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/tab_purple_indicador.xml" value="0.1995" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/tab_selected.xml" value="0.1995" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/tab_selected_purple.xml" value="0.2005" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/activity_process.xml" value="0.15" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/activity_registrar_usuario.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/activity_splash.xml" value="0.271875" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/activity_viewfile.xml" value="0.275" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_externalresouce.xml" value="0.17222222222222222" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_interseach_resource.xml" value="0.18" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_intersearch_guideline.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_intesearch_principle.xml" value="0.22" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_list_checkpoint.xml" value="0.18" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_list_guideline.xml" value="0.15485564304461943" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_list_principle.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/element_list_resource.xml" value="0.18" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_about.xml" value="0.275" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_ac_expression.xml" value="0.22616136919315402" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_checkpoint_detail.xml" value="0.22" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_d_u_a.xml" value="0.2676767676767677" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_dua_detail.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_engagement.xml" value="0.22616136919315402" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_externalresource.xml" value="0.17890625" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_externalresource_detail.xml" value="0.13" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_guideline_detail.xml" value="0.18" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_i_searchfragment.xml" value="0.275" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_i_sguideline.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_i_sresource_detail.xml" value="0.15" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_i_sresources.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_intesearch.xml" value="0.16" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_lcheckpoint.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_learning.xml" value="0.15" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_lguideline.xml" value="0.22" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_principle_all.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_principle_detail.xml" value="0.25" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_representation.xml" value="0.19473684210526315" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_resourcesguideline.xml" value="0.22" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_search.xml" value="0.17" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_searchresource_detail.xml" value="0.18" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_sectionsearch.xml" value="0.275" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/list_item.xml" value="0.1076388888888889" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/navigation_header.xml" value="0.22" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/tab_layout_purple.xml" value="0.33" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/toolbar.xml" value="0.16640625" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/menu/navigation_menu.xml" value="0.22" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/mipmap-anydpi-v26/cere-representacion_round.xml" value="0.2205" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.282" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/xml/provider_paths.xml" value="0.1234375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

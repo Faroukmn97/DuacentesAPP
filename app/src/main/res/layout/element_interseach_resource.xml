@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:andriod="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    andriod:id="@+id/cv"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="wrap_content"
+    andriod:animateLayoutChanges="true"
+    app:cardCornerRadius="25dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="wrap_content"
+        andriod:animateLayoutChanges="true"
+        andriod:orientation="vertical">
+        <RelativeLayout
+            andriod:layout_width="match_parent"
+            andriod:layout_height="wrap_content"
+            andriod:orientation="horizontal"
+            andriod:padding="6dp">
+
+            <ImageView
+                andriod:id="@+id/ISToolImageView"
+                andriod:layout_width="65dp"
+                andriod:layout_height="65dp"
+                andriod:layout_alignParentStart="true"
+                andriod:layout_alignParentLeft="true"
+                andriod:layout_centerVertical="true"
+                andriod:layout_gravity="center"
+                andriod:paddingLeft="10dp"
+                andriod:paddingRight="10dp"
+                andriod:scaleType="centerCrop"
+                app:srcCompat="@drawable/search" />
+            <LinearLayout
+                andriod:id="@+id/linearLayout"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:layout_alignParentTop="true"
+                andriod:layout_marginTop="2dp"
+                andriod:layout_toRightOf="@+id/ISToolImageView"
+                andriod:orientation="vertical"
+                andriod:layout_marginLeft="4dp">
+                <TextView
+                    andriod:id="@+id/nameISresource"
+                    andriod:layout_width="match_parent"
+                    andriod:layout_height="wrap_content"
+                    andriod:layout_margin="10dp"
+                    andriod:text="Name"
+                    andriod:textAlignment="center"
+                    andriod:textColor="@android:color/black"
+                    andriod:textSize="25sp"
+                    andriod:textStyle="bold"/>
+
+               <!-- <TextView
+                    andriod:id="@+id/descripISresource"
+                    andriod:layout_width="match_parent"
+                    andriod:layout_height="wrap_content"
+                    andriod:text="Descripción"
+                    andriod:textSize="16sp" />
+                <TextView
+                    andriod:id="@+id/linkISresource"
+                    andriod:layout_width="match_parent"
+                    andriod:layout_height="wrap_content"
+                    andriod:text="Link"
+                    andriod:textSize="16sp" />-->
+            <LinearLayout
+                andriod:id="@+id/linearyoutbuttonISresource"
+                andriod:layout_width="match_parent"
+                andriod:layout_height="wrap_content"
+                andriod:layout_below="@+id/nameISresource"
+                andriod:padding="4dp"
+                andriod:gravity="right"
+                andriod:orientation="vertical">
+
+                <TextView
+                    andriod:id="@+id/textvbuttonISresource"
+                    andriod:layout_width="160dp"
+                    andriod:layout_height="match_parent"
+                    andriod:background="@drawable/buttonlearningrepresentation"
+                    andriod:drawableEnd="@drawable/ic_baseline_east"
+                    andriod:drawablePadding="1dp"
+                    andriod:padding="10dp"
+                    andriod:text="Más información"
+                    andriod:textColor="@color/white"
+                    andriod:textStyle="bold"/>
+            </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

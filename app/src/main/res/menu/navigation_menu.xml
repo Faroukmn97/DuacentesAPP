@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+ <!--   <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_24"
+        android:title="@string/home"></item>-->
+
+    <item
+        android:id="@+id/dua"
+        android:icon="@drawable/dua"
+        android:title="@string/dua"></item>
+
+    <item
+        android:id="@+id/learning"
+        android:icon="@drawable/learning"
+        android:title="@string/learning" />
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/intesearch"
+        android:icon="@drawable/search_seccion"
+        android:title="@string/intesearch"></item>
+    <item
+        android:id="@+id/externalresource"
+        android:icon="@drawable/external_resourcel"
+        android:title="@string/externalresource"></item>
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/about"
+        android:title="@string/about"></item>
+
+    <item
+        android:id="@+id/logOff"
+        android:icon="@drawable/ic_salir"
+        android:title="@string/salir" />
+</menu>

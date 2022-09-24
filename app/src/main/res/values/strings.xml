@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">DUAcentes</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="home">Inicio</string>
+    <string name="learning">Aprendizaje</string>
+    <string name="search">Búsqueda</string>
+    <string name="intesearch">Búsqueda por secciones</string>
+    <string name="externalresource">Recursos complementarios</string>
+    <string name="todo">TODO</string>
+    <string name="email">Correo</string>
+    <string name="salir">Cerrar sesión</string>
+    <string name="representación">Representación</string>
+    <string name="implicacion">Implicación</string>
+    <string name="accionexpresion">Acción y expresión </string>
+    <string name="about">Acerca de</string>
+    <string name="dua">DUA</string>
+    <string name="principios">Principios</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Combox-->
+
+    <string name="selectprinciple">Seleccione un principio</string>
+
+    <string name="selectguideline">Seleccione una pauta</string>
+    <string name="search_hint">Búsqueda de recursos</string>
+
+
+</resources>

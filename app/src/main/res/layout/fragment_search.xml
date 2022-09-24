@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/action_bar_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:textColorHint="@android:color/black"
+            app:iconifiedByDefault="false"
+            android:theme="@style/SearchViewStyle"
+            android:layoutDirection="rtl"
+            app:closeIcon="@drawable/cerrar"
+            app:queryHint="@string/search_hint"
+            app:searchIcon="@drawable/buscador"
+            android:supportsRtl="true"
+            android:animateLayoutChanges="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/LRViewsearchtool"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp" />
+    </LinearLayout>
+
+
+</FrameLayout>
