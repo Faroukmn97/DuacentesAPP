@@ -57,13 +57,7 @@ public class PrincipleDetailFragment extends Fragment {
      */
     private TextView tittleprincipledetail;
     private ImageView imgheaderprinciple;
-
-    private final int[] backgrounds = {
-            R.drawable.cardlearningrepresentation,
-            R.drawable.cardlearningacex,
-            R.drawable.cardlearningengagement,
-    };
-
+    
     /**
      * Sección 2
      */

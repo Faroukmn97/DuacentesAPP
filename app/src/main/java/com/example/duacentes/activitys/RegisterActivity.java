@@ -96,7 +96,12 @@ public class RegisterActivity extends AppCompatActivity {
      */
     private EditText edtNameUser, lastname, lastnamemother, edtbirthdateUser, edtEmailUser, edtPasswordUser;
 
-    private TextInputLayout txtInputNameUser, txtInputAppliedPatternU, txtInputAppliedMaternalU, txtInputbirthdate, txtInputEmailUser, txtInputPasswordUser;
+    private TextInputLayout txtInputNameUser;
+    private TextInputLayout txtInputAppliedPatternU;
+    private TextInputLayout txtInputAppliedMaternalU;
+    private TextInputLayout txtInputbirthdate;
+    private TextInputLayout txtInputEmailUser;
+    private TextInputLayout txtInputPasswordUser;
 
     private int dia, mes, anio;
 
@@ -326,7 +331,7 @@ public class RegisterActivity extends AppCompatActivity {
                             data.put("birthdate", birthdate);
                             data.put("state", true);
 
-                            PostUserRegistrationDocente(data);
+                            PURegistrationD(data);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -348,7 +353,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void PostUserRegistrationDocente(JSONObject data) throws JSONException {
+    private void PURegistrationD(JSONObject data) throws JSONException {
         HttpsTrustManager.allowAllSSL();
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, general_data.URL + "users/PostUserRegistrationDocente",
@@ -406,10 +411,12 @@ public class RegisterActivity extends AppCompatActivity {
                     new X509TrustManager() {
                         @Override
                         public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+                            Log.d("checkClientTrusted", "checkClientTrusted");
                         }
 
                         @Override
                         public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
+                            Log.d("checkServerTrusted", "checkServerTrusted");
                         }
 
                         @Override

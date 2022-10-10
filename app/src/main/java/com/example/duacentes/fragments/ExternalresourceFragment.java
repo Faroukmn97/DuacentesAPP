@@ -211,8 +211,6 @@ public class ExternalresourceFragment extends Fragment {
      */
 
     public void sessionuser() {
-        String iduser = preferences.getString("iduser", null);
-        String email = preferences.getString("email", null);
         user_token = preferences.getString("user_token", null);
     }
 
@@ -225,22 +223,6 @@ public class ExternalresourceFragment extends Fragment {
         preferences = this.getActivity().getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
     }
-
-
-    /**
-     * Login
-     */
-
-    private void gologin() {
-        Intent i = new Intent(getActivity(), MainActivity.class);
-        // bandera para que no se creen nuevas actividades innecesarias
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
-                Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(i);
-    }
-
-
 
     @Override
     public void onAttach(Context context){

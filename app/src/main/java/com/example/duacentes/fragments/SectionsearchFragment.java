@@ -248,7 +248,7 @@ public class SectionsearchFragment extends Fragment {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                 String item = adapterView.getItemAtPosition(i).toString();
-                                getgbyprinciple(ListElementsPrinciple.get(i).getIdprinciple());
+                                ggbyp(ListElementsPrinciple.get(i).getIdprinciple());
                                 principleModel = ListElementsPrinciple.get(i);
                                // Toast.makeText(getActivity(), "Item "+ item, Toast.LENGTH_SHORT).show();
                             }
@@ -296,7 +296,7 @@ public class SectionsearchFragment extends Fragment {
 
     }
 
-    private void getgbyprinciple(int idprinciple) {
+    private void ggbyp(int idprinciple) {
 
        // Log.d("ID PRINCIPIO: ", String.valueOf(idprinciple) );
 
@@ -351,9 +351,6 @@ public class SectionsearchFragment extends Fragment {
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                 String item = adapterView.getItemAtPosition(i).toString();
                                 guidelineModel = ListElementsGuideline.get(i);
-                                if(item != null || item != ""){
-                                 //   btngotoresource.setEnabled(true);
-                                }
                             }
                         });
 

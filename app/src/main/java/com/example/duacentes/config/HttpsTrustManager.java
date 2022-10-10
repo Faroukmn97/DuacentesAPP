@@ -1,5 +1,7 @@
 package com.example.duacentes.config;
 
+import android.util.Log;
+
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -19,9 +21,9 @@ public class HttpsTrustManager implements X509TrustManager {
 
     @Override
     public void checkClientTrusted(
-            java.security.cert.X509Certificate[] x509Certificates, String s)
+           X509Certificate[] x509Certificates, String s)
             throws java.security.cert.CertificateException {
-
+        Log.d("x509Certificates", "x509Certificates");
     }
 
     @Override

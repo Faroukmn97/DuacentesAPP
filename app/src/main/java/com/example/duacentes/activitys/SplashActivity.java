@@ -17,13 +17,6 @@ public class SplashActivity extends AppCompatActivity {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser;
-    private String names;
-    private String last_name;
-    private String email;
-    private String image;
-    private String rol;
-    private String state;
     private String user_token;
 
     @Override
@@ -69,14 +62,14 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void sessionuser(){
-        iduser = preferences.getString("iduser",null);
-        names= preferences.getString("names",null);
-        last_name= preferences.getString("last_name",null);
-        email= preferences.getString("email",null);
-        image= preferences.getString("image",null);
+        String iduser = preferences.getString("iduser", null);
+        String names = preferences.getString("names", null);
+        String last_name = preferences.getString("last_name", null);
+        String email = preferences.getString("email", null);
+        String image = preferences.getString("image", null);
         String birthdate = preferences.getString("birthdate", null);
-        rol= preferences.getString("rol",null);
-        state= preferences.getString("state",null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
         user_token= preferences.getString("user_token",null);
     }
 }

@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
 public class SearchToolAdapter extends RecyclerView.Adapter<SearchToolAdapter.SearchToolViewHolder> implements View.OnClickListener {
     private List<ToolModel> mData;
     private ArrayList<ToolModel> mDataO;
-    private ArrayList<ToolModel> mDatablanc;
     private LayoutInflater mInflater;
     private Context context;
     private View.OnClickListener listener;

@@ -140,7 +140,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
     }
 
-    private void getstool(String filt) {
+    private void gstool(String filt) {
 
         HttpsTrustManager.allowAllSSL();
 
@@ -307,7 +307,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextChange(String s) {
 
-        this.getstool(s);
+        this.gstool(s);
         searchToolAdapter.Filtering(s);
         return false;
     }
