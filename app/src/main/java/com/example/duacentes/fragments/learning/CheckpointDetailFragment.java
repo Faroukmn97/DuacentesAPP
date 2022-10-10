@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.text.Html;
@@ -24,6 +25,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
+import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.fragments.LearningFragment;
 import com.example.duacentes.interfaces.iCommunicates_Fragments;
 import com.example.duacentes.models.CheckpointModel;
@@ -51,13 +53,13 @@ public class CheckpointDetailFragment extends Fragment {
     private ImageView imgheadercheckpoint;
     private LinearLayout linearyoutimageheadercheckpoint;
 
-    private int[] backgrounds = {
+    private final int[] backgrounds = {
             R.drawable.cardlearningrepresentation,
             R.drawable.cardlearningacex,
             R.drawable.cardlearningengagement,
     };
 
-    private int[] backgroundsbuttons = {
+    private final int[] backgroundsbuttons = {
             R.drawable.buttonlearningrepresentation,
             R.drawable.buttonlearningacex,
             R.drawable.buttonlearningengagement,
@@ -69,7 +71,7 @@ public class CheckpointDetailFragment extends Fragment {
 
     private TextView descriptioncheckpointdetail;
 
-    private String[] descriptiondetailbycheckpoint = {
+    private final String[] descriptiondetailbycheckpoint = {
             "1",
             "2",
             "3",
@@ -85,20 +87,12 @@ public class CheckpointDetailFragment extends Fragment {
     };
 
     /**
-     * Boton de regresar a pautas
-     */
-    private TextView textvbuttonguidelinecheckdetail;
-
-    /**
-     * Boton de regresar a principios
-     */
-
-    private TextView textvbuttonprinciplecheckdetail;
-
-    /**
      * Variable principio
      */
     private PrincipleModel principleModel;
+
+    private AppCompatButton btnvoz;
+    TTSManager ttsManager = null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -124,10 +118,14 @@ public class CheckpointDetailFragment extends Fragment {
         /**
          * Modelo puntos de verificación
          */
-        CheckpointModel checkpointModel = null;
+
 
         if(object!=null){
-            checkpointModel = (CheckpointModel) object.getSerializable("object");
+
+            ttsManager = new TTSManager();
+            ttsManager.init(getActivity());
+
+            CheckpointModel checkpointModel = (CheckpointModel) object.getSerializable("object");
             principleModel = (PrincipleModel)  object.getSerializable("object2");
 
             //sección 1
@@ -156,9 +154,15 @@ public class CheckpointDetailFragment extends Fragment {
 
             descriptioncheckpointdetail.setText(Html.fromHtml(checkpointModel.getDescription()));
 
-            textvbuttonguidelinecheckdetail = view.findViewById(R.id.textvbuttonguidelinecheckdetail);
+            /**
+             * Boton de regresar a pautas
+             */
+            TextView textvbuttonguidelinecheckdetail = view.findViewById(R.id.textvbuttonguidelinecheckdetail);
 
-            textvbuttonprinciplecheckdetail = view.findViewById(R.id.textvbuttonprinciplecheckdetail);
+            /**
+             * Boton de regresar a principios
+             */
+            TextView textvbuttonprinciplecheckdetail = view.findViewById(R.id.textvbuttonprinciplecheckdetail);
 
             textvbuttonguidelinecheckdetail.setBackgroundResource(backgroundsbuttons[checkpointModel.getIdprinciple() - 1]);
 
@@ -177,6 +181,13 @@ public class CheckpointDetailFragment extends Fragment {
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .setCustomAnimations(R.anim.slide_in,0,0,R.anim.slide_out)
                             .replace(R.id.contentf, new LearningFragment()).addToBackStack(null).commit();
+                }
+            });
+
+            btnvoz.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ttsManager.initQueue(checkpointModel.getDescription());
                 }
             });
 
@@ -199,6 +210,13 @@ public class CheckpointDetailFragment extends Fragment {
          */
 
         descriptioncheckpointdetail = (TextView) view.findViewById(R.id.descriptioncheckpointdetail);
+        btnvoz = (AppCompatButton) view.findViewById(R.id.btnvoz);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ttsManager.shutDown();
     }
 
     @Override

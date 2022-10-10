@@ -346,8 +346,6 @@ public class LcheckpointFragment extends Fragment {
         preferences = this.getActivity().getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
     }
-
-
     /**
      * Login
      */
@@ -363,7 +361,7 @@ public class LcheckpointFragment extends Fragment {
 
     private boolean validatesesion() {
         sessionuser();
-        if (iduser != null && email != null && user_token != null || user_token equals("")) {
+        if (iduser != null && email != null && user_token != null || user_token.equals("")) {
             return true;
         } else {
             return false;

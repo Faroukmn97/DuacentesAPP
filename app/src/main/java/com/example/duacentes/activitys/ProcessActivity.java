@@ -1,13 +1,11 @@
 package com.example.duacentes.activitys;
 
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,7 +34,6 @@ import com.example.duacentes.fragments.DUAFragment;
 import com.example.duacentes.fragments.ExternalresourceFragment;
 import com.example.duacentes.fragments.ISguidelineFragment;
 import com.example.duacentes.fragments.ISresourcesFragment;
-import com.example.duacentes.fragments.IntesearchFragment;
 import com.example.duacentes.fragments.LcheckpointFragment;
 import com.example.duacentes.fragments.LearningFragment;
 import com.example.duacentes.fragments.LguidelineFragment;
@@ -116,11 +113,6 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
             navigationView = findViewById(R.id.navigationView);
             toolbar = findViewById(R.id.toolbar);
 
-            // if(firstfragment){
-              /* getSupportFragmentManager().beginTransaction().add(R.id.contentf, new HomeFragment()).addToBackStack(null).commit();
-               setTitle("Inicio");*/
-            //  }
-
             if (getSupportFragmentManager().getBackStackEntryCount() <= 0) {
                 getSupportFragmentManager().beginTransaction().add(R.id.contentf, new DUAFragment()).addToBackStack(null).commit();
                 setTitle("DUA");
@@ -136,7 +128,6 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
             drawerLayout.addDrawerListener(toggle);
 
 
-            //View view = navigationView.inflateHeaderView(R.layout.navigation_header);
             navigationView.setItemIconTintList(null);
             navigationView.setNavigationItemSelectedListener(this);
 
@@ -154,7 +145,6 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
             emailprofile = (TextView) hView.findViewById(R.id.emailprofile);
             nameprofile.setText(names + " " + last_name);
             emailprofile.setText(email);
-            //     Glide.with(this).load(general_data.URLIMAG + image.replace('\\', '/')).into(foto);
 
             Glide.with(this).load(general_data.URLIMAG + image.replace('\\', '/'))
                     .placeholder(R.drawable.progress_animation)
@@ -242,10 +232,7 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
             case R.id.logOff:
 
                 logoff();
-                //  System.exit(0);
                 finish();
-               // Toast.makeText(ProcessActivity.this, "Cerrando sessión", Toast.LENGTH_LONG).show();
-
                 break;
 
         }
@@ -544,44 +531,5 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
-    /**
-     * Se controla la pulsación del botón atrás
-     *
-     * @param keyCode
-     * @param event
-     * @return
-     */
-
-
-    /*@Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == event.KEYCODE_BACK) {
-
-             new SweetAlertDialog(this,
-                    SweetAlertDialog.WARNING_TYPE).setTitleText("¿Desea salir de Duacentes?")
-                    .setConfirmButton("Si", new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            Intent intent = new Intent(Intent.ACTION_MAIN);
-                            intent.addCategory(Intent.CATEGORY_HOME);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                            logoff();
-                            finish();
-                            sweetAlertDialog.dismiss();
-                        }
-                    })
-                    .setCancelButton("Cancelar", new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            sweetAlertDialog.dismiss();
-                        }
-                    })
-                    .show();
-
-        }
-        return super.onKeyDown(keyCode, event);
-    }*/
 
 }

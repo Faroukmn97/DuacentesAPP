@@ -35,6 +35,7 @@
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_date.xml" value="0.131" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1385" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.131" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_baseline_voice.xml" value="0.3675" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_download.xml" value="0.131" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2205" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/drawable/progress_animation.xml" value="0.1875" />
@@ -66,7 +67,7 @@
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_ac_expression.xml" value="0.22616136919315402" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_checkpoint_detail.xml" value="0.22" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_d_u_a.xml" value="0.2676767676767677" />
-        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_dua_detail.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_dua_detail.xml" value="0.22" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_engagement.xml" value="0.22616136919315402" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_externalresource.xml" value="0.17890625" />
         <entry key="..\:/Proyecto_Investigacion/DUAcentes/duacentes/app/src/main/res/layout/fragment_externalresource_detail.xml" value="0.13" />

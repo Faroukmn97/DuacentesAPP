@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.text.Html;
@@ -21,6 +22,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
+import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.models.ToolModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -59,11 +61,14 @@ public class SearchresourceDetailFragment extends Fragment {
     private TextView linksearchresource;
     private MaterialButton btngotosearchresource;
 
-    private int[] backgroundsbuttons = {
+    private final int[] backgroundsbuttons = {
             R.drawable.buttonlearningrepresentation,
             R.drawable.buttonlearningacex,
             R.drawable.buttonlearningengagement,
     };
+
+    private AppCompatButton btnvoz;
+    TTSManager ttsManager = null;
 
 
     @Override
@@ -83,6 +88,10 @@ public class SearchresourceDetailFragment extends Fragment {
             toolModel = null;
 
             if (object != null) {
+
+                ttsManager = new TTSManager();
+                ttsManager.init(getActivity());
+
                 toolModel = (ToolModel) object.getSerializable("object");
 
                 //sección 1
@@ -125,6 +134,13 @@ public class SearchresourceDetailFragment extends Fragment {
                     }
                 });
 
+                btnvoz.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ttsManager.initQueue(toolModel.getDescription());
+                    }
+                });
+
 
             }
 
@@ -145,10 +161,17 @@ public class SearchresourceDetailFragment extends Fragment {
         // Bloque 3
 
         descripsearchresource = (TextView) view.findViewById(R.id.descripsearchresource);
+        btnvoz = (AppCompatButton) view.findViewById(R.id.btnvoz);
 
         // Bloque 4
 
         linksearchresource = (TextView) view.findViewById(R.id.linksearchresource);
         btngotosearchresource = (MaterialButton) view.findViewById(R.id.btngotosearchresource);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ttsManager.shutDown();
     }
 }

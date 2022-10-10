@@ -98,6 +98,7 @@ public class SearchToolAdapter extends RecyclerView.Adapter<SearchToolAdapter.Se
         } else {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                     List<ToolModel> collection = mData.stream()
+                            .distinct()
                             .filter(i -> i.getName().toLowerCase().contains(searchtool.toLowerCase()))
                             .collect(Collectors.toList());
                     mData.clear();

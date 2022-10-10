@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /* supportRequestWindowFeature(Window.FEATURE_NO_TITLE); */
         setContentView(R.layout.activity_main);
         init();
         proDialog = new ProgressDialog(this);
@@ -81,10 +80,8 @@ public class MainActivity extends AppCompatActivity {
         proDialog.show();
         if(validatesesion()){
             proDialog.dismiss();
-          //  Toast.makeText(MainActivity.this, "Sesión activa", Toast.LENGTH_LONG).show();
         }else{
             proDialog.dismiss();
-          //  Toast.makeText(MainActivity.this, "Sesión inactiva", Toast.LENGTH_LONG).show();
             proDialog.dismiss();
         }
 
@@ -212,11 +209,9 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("user_token",response.getJSONObject("data").getString("user_token"));
                         editor.putBoolean("firstfragment",true);
                         editor.commit();
-                       // successMessage("Sesión iniciada");
                         goMenu();
                         proDialog.dismiss();
                     }else{
-                      //  Toast.makeText(MainActivity.this, "Incorrect credentials", Toast.LENGTH_LONG).show();
                         warningMessage("Credenciales incorrectas");
                         proDialog.dismiss();
                     }

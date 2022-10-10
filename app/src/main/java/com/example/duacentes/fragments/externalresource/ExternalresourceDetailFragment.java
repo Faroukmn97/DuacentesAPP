@@ -15,6 +15,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
@@ -33,6 +34,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
 import com.example.duacentes.activitys.MainActivity;
+import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.config.general_data;
 import com.example.duacentes.models.ExternalresourceModel;
 import com.google.android.material.button.MaterialButton;
@@ -81,6 +83,9 @@ public class ExternalresourceDetailFragment extends Fragment {
 
     private long downloadId;
 
+    private AppCompatButton btnvoz;
+    TTSManager ttsManager = null;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,6 +103,10 @@ public class ExternalresourceDetailFragment extends Fragment {
         Bundle object = getArguments();
         ExternalresourceModel externalresourceModel;
         if (object != null) {
+
+            ttsManager = new TTSManager();
+            ttsManager.init(getActivity());
+
             externalresourceModel = (ExternalresourceModel) object.getSerializable("object");
 
             Glide.with(this).load(externalresourceModel.getImage().replace('\\', '/'))
@@ -130,6 +139,13 @@ public class ExternalresourceDetailFragment extends Fragment {
 
                  //   Log.d("PDFLINK", general_data.URLIMAG + externalresourceModel.getResource().toString().replace("\\", ""));
                     downloadFile(externalresourceModel);
+                }
+            });
+
+            btnvoz.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ttsManager.initQueue(externalresourceModel.getDescription());
                 }
             });
         }
@@ -327,11 +343,18 @@ public class ExternalresourceDetailFragment extends Fragment {
         imageresourceexternal = (ShapeableImageView) view.findViewById(R.id.imageresourceexternal);
         nameexternalresource = (TextView) view.findViewById(R.id.nameexternalresource);
         descriptionexternalresource = (TextView) view.findViewById(R.id.descriptionexternalresource);
+        btnvoz = (AppCompatButton) view.findViewById(R.id.btnvoz);
         // bloque 2
       //  linkresourceexternal = (TextView) view.findViewById(R.id.linkresourceexternal);
         btngotoresourceexternal = (MaterialButton) view.findViewById(R.id.btngotoresourceexternal);
 
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ttsManager.shutDown();
     }
 
 

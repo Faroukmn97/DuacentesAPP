@@ -364,7 +364,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                     } else {
                         warningMessage(response.getString("message"));
-                        //  Toast.makeText(RegisterActivity.this, "Incorrect credentials", Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

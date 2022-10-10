@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.text.Html;
@@ -21,6 +22,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
+import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.config.general_data;
 import com.example.duacentes.models.GuidelineModel;
 import com.example.duacentes.models.ToolModel;
@@ -61,11 +63,14 @@ public class ISresourceDetailFragment extends Fragment {
     private TextView linkISresource;
     private TextView btngotoresource;
 
-    private int[] backgroundsbuttons = {
+    private final int[] backgroundsbuttons = {
             R.drawable.buttonlearningrepresentation,
             R.drawable.buttonlearningacex,
             R.drawable.buttonlearningengagement,
     };
+
+    private AppCompatButton btnvoz;
+    TTSManager ttsManager = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,8 +86,11 @@ public class ISresourceDetailFragment extends Fragment {
 
         if (getActivity() != null) {
 
+            ttsManager = new TTSManager();
+            ttsManager.init(getActivity());
+
             Bundle object = getArguments();
-            toolModel = null;
+
             if (object != null) {
                 toolModel = (ToolModel) object.getSerializable("object");
 
@@ -125,6 +133,13 @@ public class ISresourceDetailFragment extends Fragment {
 
                     }
                 });
+
+                btnvoz.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ttsManager.initQueue(toolModel.getDescription());
+                    }
+                });
             }
         }
 
@@ -143,11 +158,18 @@ public class ISresourceDetailFragment extends Fragment {
         // Bloque 3
 
         descripISresource = (TextView) view.findViewById(R.id.descripISresource);
+        btnvoz = (AppCompatButton) view.findViewById(R.id.btnvoz);
 
         // Bloque 4
 
         linkISresource = (TextView) view.findViewById(R.id.linkISresource);
         btngotoresource = (TextView) view.findViewById(R.id.btngotoresource);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ttsManager.shutDown();
     }
 
 

@@ -192,7 +192,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
                         searchToolAdapter.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(getActivity(), ListElementsSearchTool.get(recyclerViewSearchTool.getChildAdapterPosition(view)).getUrltool(), Toast.LENGTH_SHORT).show();
+                              //  Toast.makeText(getActivity(), ListElementsSearchTool.get(recyclerViewSearchTool.getChildAdapterPosition(view)).getUrltool(), Toast.LENGTH_SHORT).show();
                                 if (ListElementsSearchTool.get(recyclerViewSearchTool.getChildAdapterPosition(view)).getIdprinciple() > 0) {
                                     interfacecommunicates_Fragments.SendToolModeltoSearchResourceDetail(ListElementsSearchTool.get(recyclerViewSearchTool.getChildAdapterPosition(view)));
                                 }

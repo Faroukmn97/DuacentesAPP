@@ -334,8 +334,41 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="flaticon por facilitar los iconos."
+                                android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/idagradecimientosaboutresources"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:layout_margin="5dp"
+                            android:layout_below="@+id/idagradecimientosabouticonosflaticon"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Recursos"
+                                android:textColor="@color/colorPrimary"
                                 android:textSize="18sp"
                                 android:textStyle="bold"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/idagradecimientosaboutresourcesinfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:layout_margin="5dp"
+                            android:layout_below="@+id/idagradecimientosaboutresources"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="O. Erazo, ''Propuesta de Diseño Universal para el Aprendizaje orientado al proceso educativo de estudiantes universitarios'', Tesis de Maestría, Pontificia Universidad Católica del Ecuador (PUCE), Quito, Ecuador, 2022"
+                                android:textSize="16sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -344,7 +377,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:layout_margin="5dp"
-                            android:layout_below="@+id/idagradecimientosabouticonosflaticon"
+                            android:layout_below="@+id/idagradecimientosaboutresourcesinfo"
                             android:orientation="vertical">
 
                             <TextView

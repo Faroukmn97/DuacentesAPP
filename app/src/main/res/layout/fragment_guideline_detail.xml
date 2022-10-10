@@ -145,6 +145,24 @@
                                 android:textSize="18sp" />
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/linearTitledescriptionguidelinedetail1"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:gravity="right">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnvoz"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:drawableStart="@drawable/ic_baseline_voice"
+                                android:drawablePadding="1dp"
+                                android:padding="10dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
@@ -206,6 +224,25 @@
                                 android:textAlignment="textStart"
                                 android:text="Texto informativo de la pauta de como puede llevarse"
                                 android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/linearTitledescriptionguidelinedetail2"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:gravity="right">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnvoz2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+
+                                android:drawableStart="@drawable/ic_baseline_voice"
+                                android:drawablePadding="1dp"
+                                android:padding="10dp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </RelativeLayout>

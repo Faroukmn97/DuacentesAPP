@@ -236,7 +236,7 @@ public class ISresourcesFragment extends Fragment {
                         ISToolAdapter.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Toast.makeText(getActivity(), ListElementsISTool.get(recyclerViewISTool.getChildAdapterPosition(view)).getUrltool(), Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getActivity(), ListElementsISTool.get(recyclerViewISTool.getChildAdapterPosition(view)).getUrltool(), Toast.LENGTH_SHORT).show();
                                 if (ListElementsISTool.get(recyclerViewISTool.getChildAdapterPosition(view)).getIdprinciple() > 0) {
                                     interfacecommunicates_Fragments.SendToolModel(ListElementsISTool.get(recyclerViewISTool.getChildAdapterPosition(view)));
                                 }
