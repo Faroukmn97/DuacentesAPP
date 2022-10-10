@@ -70,14 +70,14 @@ public class DuaDetailFragment extends Fragment {
         btnvoz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ttsManager.initQueue(duadetail1voz.toString());
+                ttsManager.initQueue(duadetail1voz);
             }
         });
 
         btnvoz2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ttsManager.initQueue(duadetail2voz.toString());
+                ttsManager.initQueue(duadetail2voz);
             }
         });
 

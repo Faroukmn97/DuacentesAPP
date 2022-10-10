@@ -31,8 +31,6 @@ public class PrincipleAllFragment extends Fragment {
     /**
      * variables para mantener sesion
      */
-    private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
 
     /**
      * Progreso
@@ -84,28 +82,12 @@ public class PrincipleAllFragment extends Fragment {
         btnvoz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ttsManager.initQueue(principleall1voz.toString());
+                ttsManager.initQueue(principleall1voz);
             }
         });
 
     }
 
-    /**
-     * Sessión del usuario
-     */
-
-
-    public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
-        email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
-        user_token = preferences.getString("user_token", null);
-    }
 
     /**
      * inicialización de componentes

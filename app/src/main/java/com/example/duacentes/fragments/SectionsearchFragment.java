@@ -69,8 +69,7 @@ public class SectionsearchFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
-    private Boolean firstfragment;
+    private String user_token;
 
     /**
      * Encabezado
@@ -249,7 +248,7 @@ public class SectionsearchFragment extends Fragment {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                 String item = adapterView.getItemAtPosition(i).toString();
-                                getguidelinebyprinciple(ListElementsPrinciple.get(i).getIdprinciple());
+                                getgbyprinciple(ListElementsPrinciple.get(i).getIdprinciple());
                                 principleModel = ListElementsPrinciple.get(i);
                                // Toast.makeText(getActivity(), "Item "+ item, Toast.LENGTH_SHORT).show();
                             }
@@ -297,7 +296,7 @@ public class SectionsearchFragment extends Fragment {
 
     }
 
-    private void getguidelinebyprinciple(int idprinciple) {
+    private void getgbyprinciple(int idprinciple) {
 
        // Log.d("ID PRINCIPIO: ", String.valueOf(idprinciple) );
 
@@ -418,14 +417,14 @@ public class SectionsearchFragment extends Fragment {
     }
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
-        email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
+        String iduser = preferences.getString("iduser", null);
+        String names = preferences.getString("names", null);
+        String last_name = preferences.getString("last_name", null);
+        String email = preferences.getString("email", null);
+        String image = preferences.getString("image", null);
+        String birthdate = preferences.getString("birthdate", null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
         user_token = preferences.getString("user_token", null);
     }
 

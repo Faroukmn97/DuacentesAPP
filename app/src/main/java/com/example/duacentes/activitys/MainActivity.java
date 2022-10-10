@@ -58,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
-    private Boolean firstfragment;
+    private String user_token;
 
     /**
      *
@@ -133,14 +132,14 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void sessionuser(){
-        iduser = preferences.getString("iduser",null);
-        names= preferences.getString("names",null);
-        last_name= preferences.getString("last_name",null);
-        email= preferences.getString("email",null);
-        image= preferences.getString("image",null);
-        birthdate= preferences.getString("birthdate",null);
-        rol= preferences.getString("rol",null);
-        state= preferences.getString("state",null);
+        String iduser = preferences.getString("iduser", null);
+        String names = preferences.getString("names", null);
+        String last_name = preferences.getString("last_name", null);
+        String email = preferences.getString("email", null);
+        String image = preferences.getString("image", null);
+        String birthdate = preferences.getString("birthdate", null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
         user_token= preferences.getString("user_token",null);
     }
 
@@ -207,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("rol",response.getJSONObject("data").getString("rol"));
                         editor.putString("state",response.getJSONObject("data").getString("state"));
                         editor.putString("user_token",response.getJSONObject("data").getString("user_token"));
-                        editor.putBoolean("firstfragment",true);
                         editor.commit();
                         goMenu();
                         proDialog.dismiss();

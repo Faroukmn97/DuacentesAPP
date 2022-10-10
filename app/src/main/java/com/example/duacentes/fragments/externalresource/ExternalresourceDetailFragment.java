@@ -64,7 +64,6 @@ public class ExternalresourceDetailFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
 
 
     /**
@@ -77,11 +76,7 @@ public class ExternalresourceDetailFragment extends Fragment {
     /**
      * Bloque 2
      */
-    TextView linkresourceexternal;
     MaterialButton btngotoresourceexternal;
-    DownloadManager manager;
-
-    private long downloadId;
 
     private AppCompatButton btnvoz;
     TTSManager ttsManager = null;
@@ -133,11 +128,6 @@ public class ExternalresourceDetailFragment extends Fragment {
             btngotoresourceexternal.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /*Uri uri = Uri.parse(general_data.URLIMAG + externalresourceModel.getResource().toString().replace("\\", ""));
-                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                    startActivity(intent);*/
-
-                 //   Log.d("PDFLINK", general_data.URLIMAG + externalresourceModel.getResource().toString().replace("\\", ""));
                     downloadFile(externalresourceModel);
                 }
             });
@@ -256,9 +246,9 @@ public class ExternalresourceDetailFragment extends Fragment {
             } finally {
 
                 try {
-                    if (input != null) { input.close(); }
-                    if (output != null) { output.close(); }
-                    if (connection != null) { connection.disconnect(); }
+                    if (input != null) input.close();
+                    if (output != null) output.close();
+                    if (connection != null) connection.disconnect();
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -321,15 +311,15 @@ public class ExternalresourceDetailFragment extends Fragment {
      */
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
-        email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
-        user_token = preferences.getString("user_token", null);
+        String iduser = preferences.getString("iduser", null);
+        String names = preferences.getString("names", null);
+        String last_name = preferences.getString("last_name", null);
+        String email = preferences.getString("email", null);
+        String image = preferences.getString("image", null);
+        String birthdate = preferences.getString("birthdate", null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
+        String user_token = preferences.getString("user_token", null);
     }
 
     /**

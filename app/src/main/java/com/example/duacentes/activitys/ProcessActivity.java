@@ -68,7 +68,11 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
+    private String names;
+    private String last_name;
+    private String email;
+    private String image;
+    private String user_token;
 
     /**
      * Sección Fragments
@@ -263,14 +267,14 @@ public class ProcessActivity extends AppCompatActivity implements NavigationView
      */
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
+        String iduser = preferences.getString("iduser", null);
         names = preferences.getString("names", null);
         last_name = preferences.getString("last_name", null);
         email = preferences.getString("email", null);
         image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
+        String birthdate = preferences.getString("birthdate", null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
         user_token = preferences.getString("user_token", null);
         Boolean firstfragment = preferences.getBoolean("firstfragment", false);
     }

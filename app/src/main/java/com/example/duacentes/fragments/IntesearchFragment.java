@@ -62,7 +62,9 @@ public class IntesearchFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
+    private String iduser;
+    private String email;
+    private String user_token;
 
     /**
      * Lista modelo de principios
@@ -211,13 +213,13 @@ public class IntesearchFragment extends Fragment {
 
     public void sessionuser() {
         iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
+        String names = preferences.getString("names", null);
+        String last_name = preferences.getString("last_name", null);
         email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
+        String image = preferences.getString("image", null);
+        String birthdate = preferences.getString("birthdate", null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
         user_token = preferences.getString("user_token", null);
     }
 
@@ -245,11 +247,7 @@ public class IntesearchFragment extends Fragment {
 
     private boolean validatesesion() {
         sessionuser();
-        if (iduser != null && email != null && user_token != null && user_token != "") {
-            return true;
-        } else {
-            return false;
-        }
+        return iduser != null && email != null && user_token != null && user_token.equals("");
     }
 
     @Override

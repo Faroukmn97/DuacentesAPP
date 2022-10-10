@@ -64,7 +64,9 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser, names, last_name, email, image, birthdate, rol, state, user_token;
+    private String iduser;
+    private String email;
+    private String user_token;
 
     /**
      * Lista modelo de herramientas
@@ -132,18 +134,17 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
             ListElementsSearchTool.add(new ToolModel(0, "¿Qué recurso está buscando?", "https://fyc.uteq.edu.ec/duacentes/static/images/app/confundido_search.png", "", "", "Le recomendamos buscar con otras palabras claves", 0, "", 0, "", 0, "", "", "", true));
             searchToolAdapter = new SearchToolAdapter(ListElementsSearchTool, getActivity());
             recyclerViewSearchTool.setAdapter(searchToolAdapter);
-           // this.getsearchtool("xxxxxxxxxxxxxx");
             searchView.setOnQueryTextListener(this);
             proDialogSearch.dismiss();
         }
 
     }
 
-    private void getsearchtool(String filt) {
+    private void getstool(String filt) {
 
         HttpsTrustManager.allowAllSSL();
 
-        filt = (filt == "" || filt.isEmpty()) ? "null" : filt;
+        filt = (filt.equals("") || filt.isEmpty()) ? "null" : filt;
 
         /**
          * API
@@ -247,13 +248,13 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
     public void sessionuser() {
         iduser = preferences.getString("iduser", null);
-        names = preferences.getString("names", null);
-        last_name = preferences.getString("last_name", null);
+        String names = preferences.getString("names", null);
+        String last_name = preferences.getString("last_name", null);
         email = preferences.getString("email", null);
-        image = preferences.getString("image", null);
-        birthdate = preferences.getString("birthdate", null);
-        rol = preferences.getString("rol", null);
-        state = preferences.getString("state", null);
+        String image = preferences.getString("image", null);
+        String birthdate = preferences.getString("birthdate", null);
+        String rol = preferences.getString("rol", null);
+        String state = preferences.getString("state", null);
         user_token = preferences.getString("user_token", null);
     }
 
@@ -281,11 +282,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
     private boolean validatesesion() {
         sessionuser();
-        if (iduser != null && email != null && user_token != null || user_token != "") {
-            return true;
-        } else {
-            return false;
-        }
+        return iduser != null && email != null && user_token != null || user_token.equals("");
     }
 
     @Override
@@ -310,7 +307,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextChange(String s) {
 
-        this.getsearchtool(s);
+        this.getstool(s);
         searchToolAdapter.Filtering(s);
         return false;
     }
