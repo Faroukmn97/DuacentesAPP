@@ -62,7 +62,6 @@ public class LearningFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser;
     private String email;
     private String user_token;
 
@@ -85,11 +84,6 @@ public class LearningFragment extends Fragment {
      * Comunicación entre fragmentos
      */
     private iCommunicates_Fragments interfacecommunicates_Fragments;
-
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
 
 
     @Nullable
@@ -208,7 +202,6 @@ public class LearningFragment extends Fragment {
      */
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
         String names = preferences.getString("names", null);
         String last_name = preferences.getString("last_name", null);
         email = preferences.getString("email", null);
@@ -243,15 +236,18 @@ public class LearningFragment extends Fragment {
 
     private boolean validatesesion() {
         sessionuser();
-        return iduser != null && email != null && user_token != null && user_token.equals("");
+        return email != null && user_token != null && user_token.equals("");
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
 

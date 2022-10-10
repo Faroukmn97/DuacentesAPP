@@ -3,22 +3,18 @@ package com.example.duacentes.fragments;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,15 +23,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.duacentes.R;
-import com.example.duacentes.activitys.MainActivity;
-import com.example.duacentes.adapters.CheckpointLearningAdapter;
 import com.example.duacentes.adapters.ExternalresourceAdapter;
 import com.example.duacentes.config.HttpsTrustManager;
 import com.example.duacentes.config.general_data;
 import com.example.duacentes.interfaces.iCommunicates_Fragments;
-import com.example.duacentes.models.CheckpointModel;
 import com.example.duacentes.models.ExternalresourceModel;
-import com.example.duacentes.models.GuidelineModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -103,9 +95,7 @@ public class ExternalresourceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         recyclerViewExternalresource = view.findViewById(R.id.RViewresourceexternal);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerViewExternalresource.setLayoutManager(layoutManager);
-        recyclerViewExternalresource.setHasFixedSize(true);
+
         this.getexternalresource();
     }
 
@@ -141,14 +131,15 @@ public class ExternalresourceFragment extends Fragment {
                                     object.get("updatedate").toString(),
                                     object.getBoolean("state")));
                         }
-
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                        recyclerViewExternalresource.setLayoutManager(layoutManager);
+                        recyclerViewExternalresource.setHasFixedSize(true);
                         externalresourceAdapter  = new ExternalresourceAdapter(ListElementsExternalresourceModel, getActivity());
                         recyclerViewExternalresource.setAdapter(externalresourceAdapter);
 
                         externalresourceAdapter.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                               // Toast.makeText(getActivity(),ListElementsExternalresourceModel.get(recyclerViewExternalresource.getChildAdapterPosition(view)).getName(),Toast.LENGTH_SHORT).show();
                                 interfacecommunicates_Fragments.SendExternalResourceModel(ListElementsExternalresourceModel.get(recyclerViewExternalresource.getChildAdapterPosition(view)));
                             }
                         });

@@ -6,24 +6,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,11 +35,9 @@ import com.example.duacentes.interfaces.iCommunicates_Fragments;
 import com.example.duacentes.models.CheckpointModel;
 import com.example.duacentes.models.GuidelineModel;
 import com.example.duacentes.models.PrincipleModel;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -87,17 +80,6 @@ public class LcheckpointFragment extends Fragment {
      */
     private CheckpointLearningAdapter checkpointLearningAdapter;
 
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
-
-    /**
-     * Textview Nombre del princicip
-     */
-    private TextView nameguidelinecheck;
-
-    private ImageView imgguidelinecheck;
 
     /**
      * Modelo principio
@@ -115,7 +97,6 @@ public class LcheckpointFragment extends Fragment {
 
     private TextView textvbuttonprinciplecheck;
 
-    private ImageView Imageprincipleguide;
     /**
      * Contiene las imagenes de los cerebros de los principios
      */
@@ -179,15 +160,18 @@ public class LcheckpointFragment extends Fragment {
             guidelineModel = (GuidelineModel) object.getSerializable("object");
             principleModel = (PrincipleModel) object.getSerializable("object2");
 
-            nameguidelinecheck = (TextView) view.findViewById(R.id.nameguidelinecheck);
+            /**
+             * Textview Nombre del princicip
+             */
+            TextView nameguidelinecheck = (TextView) view.findViewById(R.id.nameguidelinecheck);
             nameguidelinecheck.setText(guidelineModel.getName());
 
 
             namepguideline = (TextView) view.findViewById(R.id.namepguidelinecheck);
             namepguideline.setText(principleModel.getName());
 
-            Imageprincipleguide = (ImageView) view.findViewById(R.id.Imageprincipleguidecheck);
-            Imageprincipleguide.setBackgroundResource(Icons[principleModel.getIdprinciple() - 1]);
+            ImageView imageprincipleguide = (ImageView) view.findViewById(R.id.Imageprincipleguidecheck);
+            imageprincipleguide.setBackgroundResource(Icons[principleModel.getIdprinciple() - 1]);
 
 
             recyclerViewCheckpoint= view.findViewById(R.id.LRViewcheckpoint);
@@ -370,8 +354,11 @@ public class LcheckpointFragment extends Fragment {
     public void onAttach(Context context){
         super.onAttach(context);
         if(context instanceof Activity){
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
     @Override

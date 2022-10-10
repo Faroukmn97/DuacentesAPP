@@ -5,24 +5,18 @@ import static java.lang.Thread.sleep;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,7 +25,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.duacentes.R;
-import com.example.duacentes.activitys.MainActivity;
 import com.example.duacentes.adapters.GuidelineLearningAdapter;
 import com.example.duacentes.config.HttpsTrustManager;
 import com.example.duacentes.config.general_data;
@@ -61,7 +54,7 @@ public class LguidelineFragment extends Fragment {
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser,email,user_token;
+    private String user_token;
 
     /**
      * Lista modelo de principios
@@ -83,21 +76,6 @@ public class LguidelineFragment extends Fragment {
      */
     private GuidelineLearningAdapter guidelinesLearningAdapter;
 
-
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
-
-
-    /**
-     * Contiene las imagenes de los cerebros de los principios
-     */
-    private int[] Icons = {
-            R.drawable.cerebrorepresentacion,
-            R.drawable.cerebroaccexpresion,
-            R.drawable.cerebrocompromiso,
-    };
 
     /**
      * Barra de progreso de carga
@@ -250,8 +228,6 @@ public class LguidelineFragment extends Fragment {
      */
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
-        email = preferences.getString("email", null);
         user_token = preferences.getString("user_token", null);
     }
 
@@ -270,8 +246,11 @@ public class LguidelineFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
 

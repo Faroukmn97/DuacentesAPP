@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
@@ -29,7 +28,6 @@ import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.fragments.LearningFragment;
 import com.example.duacentes.interfaces.iCommunicates_Fragments;
 import com.example.duacentes.models.CheckpointModel;
-import com.example.duacentes.models.GuidelineModel;
 import com.example.duacentes.models.PrincipleModel;
 
 

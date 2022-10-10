@@ -54,17 +54,11 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
     private RequestQueue requestQueue;
 
 
-    /**
-     * Barra de progreso de carga
-     */
-    private ProgressDialog proDialog;
-
 
     /**
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
-    private String iduser;
     private String email;
     private String user_token;
 
@@ -88,13 +82,6 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
      * Comunicación entre fragmentos
      */
     private iCommunicates_Fragments interfacecommunicates_Fragments;
-
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
-
-    private SearchView searchView;
 
     View view;
 
@@ -121,7 +108,7 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
         if (getActivity() != null) {
             view = view;
-            searchView = view.findViewById(R.id.action_bar_spinner);
+            SearchView searchView = view.findViewById(R.id.action_bar_spinner);
 
             recyclerViewSearchTool = view.findViewById(R.id.LRViewsearchtool);
             LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -247,7 +234,6 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
      */
 
     public void sessionuser() {
-        iduser = preferences.getString("iduser", null);
         String names = preferences.getString("names", null);
         String last_name = preferences.getString("last_name", null);
         email = preferences.getString("email", null);
@@ -282,15 +268,18 @@ public class SearchFragment extends Fragment implements SearchView.OnQueryTextLi
 
     private boolean validatesesion() {
         sessionuser();
-        return iduser != null && email != null && user_token != null || user_token.equals("");
+        return email != null && user_token != null || user_token.equals("");
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
 

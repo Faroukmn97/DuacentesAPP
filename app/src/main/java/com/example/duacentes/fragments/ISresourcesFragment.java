@@ -17,7 +17,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,12 +57,6 @@ public class ISresourcesFragment extends Fragment {
 
 
     /**
-     * Barra de progreso de carga
-     */
-    private ProgressDialog proDialog;
-
-
-    /**
      * variables para mantener sesion
      */
     private SharedPreferences preferences;
@@ -92,22 +85,7 @@ public class ISresourcesFragment extends Fragment {
      */
     private iCommunicates_Fragments interfacecommunicates_Fragments;
 
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
 
-    /**
-     * Modelo principio
-     */
-    private PrincipleModel principleModel;
-
-    /**
-     * Boton de regresar a pautas
-     */
-    Button returnbtnisresources;
-
-    private ImageView Imageprincipleguide;
     /**
      * Contiene las imagenes de los cerebros de los principios
      */
@@ -116,17 +94,6 @@ public class ISresourcesFragment extends Fragment {
             R.drawable.cerebroaccexpresion,
             R.drawable.cerebrocompromiso,
     };
-
-    /**
-     * Textview Nombre del princicio
-     */
-    private TextView namepguidelineresource;
-
-    /**
-     * Texview Nombre de la pauta
-     */
-
-    private TextView nameguidelineresource;
 
     private ProgressDialog proDialogIS;
 
@@ -153,17 +120,26 @@ public class ISresourcesFragment extends Fragment {
 
             if (object != null) {
                 guidelineModel = (GuidelineModel) object.getSerializable("object");
-                principleModel = (PrincipleModel) object.getSerializable("object2");
+                /**
+                 * Modelo principio
+                 */
+                PrincipleModel principleModel = (PrincipleModel) object.getSerializable("object2");
              //   Log.d("name", guidelineModel.getName());
 
-                namepguidelineresource = (TextView) view.findViewById(R.id.namepguidelineresource);
+                /**
+                 * Textview Nombre del princicio
+                 */
+                TextView namepguidelineresource = (TextView) view.findViewById(R.id.namepguidelineresource);
                 namepguidelineresource.setText(principleModel.getName());
 
-                nameguidelineresource = (TextView) view.findViewById(R.id.nameguidelineresource);
+                /**
+                 * Texview Nombre de la pauta
+                 */
+                TextView nameguidelineresource = (TextView) view.findViewById(R.id.nameguidelineresource);
                 nameguidelineresource.setText(guidelineModel.getName());
 
-                Imageprincipleguide = (ImageView) view.findViewById(R.id.Imageprincipleguideresource);
-                Imageprincipleguide.setBackgroundResource(Icons[principleModel.getIdprinciple() - 1]);
+                ImageView imageprincipleguide = (ImageView) view.findViewById(R.id.Imageprincipleguideresource);
+                imageprincipleguide.setBackgroundResource(Icons[principleModel.getIdprinciple() - 1]);
 
                 recyclerViewISTool = view.findViewById(R.id.LRViewisresource);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -337,8 +313,11 @@ public class ISresourcesFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
 

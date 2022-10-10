@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,23 +24,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.duacentes.R;
-import com.example.duacentes.adapters.PrinciplesLearningAdapter;
 import com.example.duacentes.config.HttpsTrustManager;
 import com.example.duacentes.config.general_data;
 import com.example.duacentes.interfaces.iCommunicates_Fragments;
 import com.example.duacentes.models.GuidelineModel;
 import com.example.duacentes.models.PrincipleModel;
 import com.google.android.material.button.MaterialButton;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
@@ -59,11 +52,6 @@ public class SectionsearchFragment extends Fragment {
      * Comunicación entre fragmentos
      */
     private iCommunicates_Fragments interfacecommunicates_Fragments;
-
-    /**
-     * referencias para comunicar fragments
-     */
-    private Activity activitys;
 
     /**
      * variables para mantener sesion
@@ -190,12 +178,6 @@ public class SectionsearchFragment extends Fragment {
 
         // Sección 3
         btngotoresource = (MaterialButton) view.findViewById(R.id.btngotoresource);
-      //  btngotoresource.setEnabled(false);
-
-
-
-
-
     }
 
     private void getprinciples() {
@@ -429,8 +411,11 @@ public class SectionsearchFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof Activity) {
-            this.activitys = (Activity) context;
-            interfacecommunicates_Fragments = (iCommunicates_Fragments) this.activitys;
+            /**
+             * referencias para comunicar fragments
+             */
+            Activity activitys = (Activity) context;
+            interfacecommunicates_Fragments = (iCommunicates_Fragments) activitys;
         }
     }
 

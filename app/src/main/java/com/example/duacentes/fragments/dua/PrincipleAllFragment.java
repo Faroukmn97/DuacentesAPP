@@ -1,27 +1,19 @@
 package com.example.duacentes.fragments.dua;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
 
+import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.duacentes.R;
 import com.example.duacentes.config.TTSManager;
-import com.example.duacentes.fragments.HomeFragment;
 import com.example.duacentes.fragments.LearningFragment;
 import com.google.android.material.button.MaterialButton;
 

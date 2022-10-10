@@ -23,10 +23,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
 import com.example.duacentes.config.TTSManager;
-import com.example.duacentes.config.general_data;
-import com.example.duacentes.models.GuidelineModel;
 import com.example.duacentes.models.ToolModel;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class ISresourceDetailFragment extends Fragment {

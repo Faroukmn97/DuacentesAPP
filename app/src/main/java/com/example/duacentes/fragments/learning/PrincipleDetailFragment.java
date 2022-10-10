@@ -3,37 +3,27 @@ package com.example.duacentes.fragments.learning;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
-
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
-import com.example.duacentes.activitys.MainActivity;
-import com.example.duacentes.activitys.RegisterActivity;
 import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.interfaces.iCommunicates_Fragments;
 import com.example.duacentes.models.PrincipleModel;
-import com.google.android.material.button.MaterialButton;
-
-import java.util.Locale;
 
 public class PrincipleDetailFragment extends Fragment {
 
@@ -57,7 +47,7 @@ public class PrincipleDetailFragment extends Fragment {
      */
     private TextView tittleprincipledetail;
     private ImageView imgheaderprinciple;
-    
+
     /**
      * Sección 2
      */

@@ -2,7 +2,6 @@ package com.example.duacentes.fragments.externalresource;
 
 import static java.lang.Thread.sleep;
 
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -33,7 +32,6 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.duacentes.R;
-import com.example.duacentes.activitys.MainActivity;
 import com.example.duacentes.config.TTSManager;
 import com.example.duacentes.config.general_data;
 import com.example.duacentes.models.ExternalresourceModel;
